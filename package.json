@@ -1,0 +1,25 @@
+{
+    "name": "vscode-petal-components-snippets",
+    "displayName": "Petal Components (HEEX) snippets",
+    "description": "Code snippets for the Petal Components (HEEX) library",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.66.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "icon": "images/icon.png",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "html-eex",
+                "path": "./snippets/snippets.code-snippets"
+            },
+            {
+                "language": "phoenix-heex",
+                "path": "./snippets/snippets.code-snippets"
+            }
+        ]
+    }
+}
