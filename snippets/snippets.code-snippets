@@ -12,5 +12,5 @@
         "<.button to={Routes.$1} link_type=\"${2:live_redirect}\" color=\"${3:primary}\" label=\"${0:Submit}\" />"
     ],
     "description": "Creates a button that is a link."
-  }
+  },
 }
