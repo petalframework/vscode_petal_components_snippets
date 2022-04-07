@@ -1,16 +1,891 @@
 {
-  "Button": {
-    "prefix": "but",
+	"Container": {
+		"prefix": "container",
+		"body": [
+				"<.container max_width=\"${0:sm|md|lg|xl|full}\">",
+				"</.container>"
+		],
+		"description": "Create a container"
+	},
+	"Link": {
+		"prefix": "link",
+		"body": [
+				"<.link ",
+				"  link_type=\"${1:a|live_patch|live_redirect}\" ",
+				"  to=\"${2:/}\" ",
+				"  class=\"${3:text-gray-700 dark:text-gray-400 hover:text-gray-900 hover:underline}\"",
+				"  label=\"${0:Link}\"",
+				"/>"
+		],
+		"description": "Creates a link"
+	},
+	"Link method": {
+		"prefix": "link method",
+		"body": [
+				"<.link ",
+				"  method={$1:put}",
+				"  to=\"${2:/}\"",
+				"  class=\"${3:text-gray-700 dark:text-gray-400 hover:text-gray-900 hover:underline}\"",
+				"  label=\"${0:Link with method}\"",
+				"/>"
+		],
+		"description": "Creates a link with method"
+	},
+	"Button": {
+    "prefix": "button",
     "body": [
         "<.button color=\"${1:primary}\" label=\"${0:Submit}\" />"
     ],
     "description": "Creates a button."
   },
   "Button link": {
-    "prefix": "butl",
+    "prefix": "button link",
     "body": [
         "<.button to={Routes.$1} link_type=\"${2:live_redirect}\" color=\"${3:primary}\" label=\"${0:Submit}\" />"
     ],
     "description": "Creates a button that is a link."
   },
+	"Button all": {
+		"prefix": "button all props",
+		"body": [
+				"<.button ",
+				"  to=\"{Routes.$1}\"",
+				"  variant=\"${2:outline|shadow}\"",
+				"  link_type=\"${3:button|a|live_patch|live_redirect}\"",
+				"  size=\"${4:xs|sm|md|lg|xl}\"",
+				"  color=\"${5:primary|secondary|white|pure_white|info|success|warning|danger|gray}\" ",
+				"  label=\"Do something\" ",
+				"  loading={false}",
+				"  disabled={false}",
+				"  icon=\"${0:{:home}}\"",
+				"/>"
+		],
+		"description": "Creates a button with all possible props"
+	},
+	"Icon button": {
+		"prefix": "icon button",
+		"body": [
+				"<.icon_button to={Routes.$1} link_type=\"${2:button}\" size=\"${3:md}\" color=\"${4:primary}\" icon=${0:{:clock}} />"
+		],
+		"description": "Creates an icon button"
+	},
+	"Icon button all": {
+		"prefix": "icon button all props",
+		"body": [
+				"<.icon_button ",
+				"  to={Routes.$1}",
+				"  disabled={false}",
+				"  loading={false}",
+				"  link_type=\"${2:button|a|live_patch|live_redirect}\"",
+				"  size=\"${3:xs|sm|md|lg|xl}\"",
+				"  icon=${4:{:trash}}",
+				"  class=\"${0:!text-indigo-600 !dark:text-indigo-300}\"",
+				"/>"
+		],
+		"description": "Creates an icon button with all possible props"
+	},
+	"h1": {
+		"prefix": "h1",
+		"body": [
+				"<.h1>${0:Heading 1}</.h1>"
+		],
+		"description": "Creates an h1 heading"
+	},
+	"h2": {
+		"prefix": "h2",
+		"body": [
+				"<.h2>${0:Heading 1}</.h2>"
+		],
+		"description": "Creates an h2 heading"
+	},
+	"h3": {
+		"prefix": "h3",
+		"body": [
+				"<.h3>${0:Heading 1}</.h3>"
+		],
+		"description": "Creates an h3 heading"
+	},
+	"h4": {
+		"prefix": "h4",
+		"body": [
+				"<.h4>${0:Heading 1}</.h4>"
+		],
+		"description": "Creates an h4 heading"
+	},
+	"h5": {
+		"prefix": "h5",
+		"body": [
+				"<.h5>${0:Heading 1}</.h5>"
+		],
+		"description": "Creates an h5 heading"
+	},
+	"p": {
+		"prefix": "p tag",
+		"body": [
+				"<.p>${0:Paragraph tag}</.p>"
+		],
+		"description": "Creates a paragraph tag"
+	},
+	"h1 modified": {
+		"prefix": "h1 modified",
+		"body": [
+				"<.h1 class=\"!text-sky-500 !dark:text-sky-400\">${0:Modified Heading}</.h1>"
+		],
+		"description": "Creates a modified h1 heading"
+	},
+	"h1 fancy": {
+		"prefix": "h1 fancy",
+		"body": [
+				"<.h1>",
+				"  <span class=\"text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500\">",
+				"    ${0:Fancy Heading}",
+				"  </span>",
+				"</.h1>"
+		],
+		"description": "Creates a fancy h1 heading"
+	},
+	"Heroicon Solid": {
+		"prefix": "heroicons solid",
+		"body": [
+				"<Heroicons.Solid.${1:home} class=\"${0:w-6 h-6 text-gray-500}\" />"
+		],
+		"description": "Creates a solid Heroicon"
+	},
+	"Heroicon Outline": {
+		"prefix": "heroicons outline",
+		"body": [
+				"<Heroicons.Outline.${1:home} class=\"${0:w-6 h-6 text-gray-500}\" />"
+		],
+		"description": "Creates an outline Heroicon"
+	},
+	"Badge": {
+		"prefix": "badge",
+		"body": [
+				"<.badge color=\"${1:primary}\" label=\"${0:Primary}\" />"
+		],
+		"description": "Create a badge"
+	},
+	"Badge all": {
+		"prefix": "badge all props",
+		"body": [
+				"<.badge color=\"${1:primary|secondary|info|success|warning|danger|gray}\" label=\"${2:Primary}\" variant=\"${3:light|dark|outline}\" size=\"${0:sm|md|lg}\" />"
+		],
+		"description": "Creates a badge with all possible props"
+	},
+	"Badge with icon": {
+		"prefix": "badge with icon",
+		"body": [
+				"<.badge color=\"${1:gray}\" variant=\"${2:light}\" icon label=\"${3:SM}\" size=\"${4:sm}\">",
+				"  <Heroicons.Solid.${0:clock} class=\"w-3 h-3 pb-[0.05rem]\" />",
+				"  2 hours ago",
+				"</.badge>"
+		],
+		"description": "Creates a badge containing an icon"
+	},
+	"Alert": {
+		"prefix": "alert",
+		"body": [
+				"<.alert",
+				"  color=\"${1:info}\"",
+				"  label=\"${0:This is an info state}\"",
+				"/>"
+		],
+		"description": "Creates an alert"
+	},
+	"Alert all": {
+		"prefix": "alert all props",
+		"body": [
+				"<.alert",
+				"  with_icon",
+				"  heading=\"${1:Optional heading that is too long}\"",
+				"  color=\"${2:info|success|warning|danger}\"",
+				"  label=\"${0:}\"",
+				"/>"
+		],
+		"description": "Creates an alert with all possible props"
+	},
+	"Dismissable alert": {
+		"prefix": "alert dismissable",
+		"body": [
+				"<.alert with_icon close_button_properties={[\"phx-click\": \"${1:do_something}\"]} heading=\"${2:Optional heading that is too long}\">",
+				"  ${0:This is quite a long paragraph that takes up more than one line.}",
+				"</.alert>"
+		],
+		"description": "Creates a dismissable alert with icon"
+	},
+	"Form field - text input": {
+		"prefix": "text_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:text_input}\"",
+				"  form={f}",
+				"  field={:$2}",
+				"  placeholder=\"$0\"",
+				"/>"
+		],
+		"description": "Form field - type text input"
+	},
+	"Form field - email input": {
+		"prefix": "email_input",
+		"body": [
+				"<.form_field ",
+				"  type=\"${1:email_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type email input"
+	},
+	"Form field - number input": {
+		"prefix": "number_input",
+		"body": [
+				"<.form_field ",
+				"  type=\"${1:number_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type number input"
+	},
+	"Form field - password input": {
+		"prefix": "password_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:password_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type password input"
+	},
+	"Form field - search input": {
+		"prefix": "search_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:search_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type search input"
+	},
+	"Form field - telephone input": {
+		"prefix": "telephone_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:telephone_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type telephone input"
+	},
+	"Form field - url input": {
+		"prefix": "url_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:url_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type url input"
+	},
+	"Form field - time input": {
+		"prefix": "time_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:time_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type time input"
+	},
+	"Form field - time select": {
+		"prefix": "time_select",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:time_select}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type time select"
+	},
+	"Form field - date input": {
+		"prefix": "date_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:date_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type date input"
+	},
+	"Form field - date select": {
+		"prefix": "date_select",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:date_select}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type date select"
+	},
+	"Form field - datetime local input": {
+		"prefix": "datetime_local_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:datetime_local_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type datetime local input"
+	},
+	"Form field - datetime select": {
+		"prefix": "datetime_select",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:datetime_select}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type datetime select"
+	},
+	"Form field - color input": {
+		"prefix": "color_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:color_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type color input"
+	},
+	"Form field - file input": {
+		"prefix": "file_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:file_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type file input"
+	},
+	"Form field - range input": {
+		"prefix": "range_input",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:range_input}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type range input"
+	},
+	"Form field - textarea": {
+		"prefix": "textarea",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:textarea}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type textarea"
+	},
+	"Form field - select": {
+		"prefix": "select",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:select}\"",
+				"  options={[\"Admin\": \"admin\", \"User\": \"user\"]}",
+				"  form={f}",
+				"  field={:$0}",
+				"/>"
+		],
+		"description": "Form field - type select"
+	},
+	"Form field - checkbox group col": {
+		"prefix": "checkbox_group_col",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:checkbox_group}\"",
+				"  form={f}",
+				"  field={:$0}",
+				"  options={[",
+				"    {\"Option 1\", \"option_1\"},",
+				"    {\"Option 2\", \"option_2\"},",
+				"    {\"Option 3\", \"option_3\"},",
+				"    {\"Option 4\", \"option_4\"}",
+				"  ]}",
+				"/>"
+		],
+		"description": "Form field - type checkbox group with col layout"
+	},
+	"Form field - checkbox group row": {
+		"prefix": "checkbox_group_row",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:checkbox_group}\"",
+				"  label=\"${2:Checkbox group with row layout}\"",
+				"  layout={${3::row}}",
+				"  form={f}",
+				"  field={:$0}",
+				"  options={[",
+				"    {\"Option 1\", \"option_1\"},",
+				"    {\"Option 2\", \"option_2\"},",
+				"    {\"Option 3\", \"option_3\"},",
+				"    {\"Option 4\", \"option_4\"}",
+				"  ]}",
+				"/>"
+		],
+		"description": "Form field - type checkbox group with row layout"
+	},
+	"Form field - radio group col": {
+		"prefix": "radio_group_col",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:radio_group}\"",
+				"  form={f}",
+				"  field={:$2}",
+				"  label=\"${0:Radio group}\"",
+				"  options={[",
+				"    \"Option 1\": \"option_1\",",
+				"    \"Option 2\": \"option_2\",",
+				"    \"Option 3\": \"option_3\"",
+				"  ]}",
+				"/>"
+		],
+		"description": "Form field - type radio group with col layout"
+	},
+	"Form field - radio group row": {
+		"prefix": "radio_group_row",
+		"body": [
+				"<.form_field",
+				"  type=\"${1:radio_group}\"",
+				"  form={f}",
+				"  field={:$2}",
+				"  layout={${3::row}}",
+				"  label=\"${0:Radio group with row layout}\"",
+				"  options={[",
+				"    \"Option 1\": \"option_1\",",
+				"    \"Option 2\": \"option_2\",",
+				"    \"Option 3\": \"option_3\"",
+				"  ]}",
+				"/>"
+		],
+		"description": "Form field - type radio group with row layout"
+	},
+	"Dropdown": {
+		"prefix": "dropdown",
+		"body": [
+				"<.dropdown label=\"${1:Dropdown}\">",
+				"  <.dropdown_menu_item>",
+				"    <Heroicons.Outline.home class=\"w-5 h-5 text-gray-500\" />",
+				"    Button item with icon",
+				"  </.dropdown_menu_item>",
+				"  <.dropdown_menu_item link_type=\"${2:button}\" label=\"${3:button item}\" />",
+				"  <.dropdown_menu_item link_type=\"${4:a|live_patch|live_redirect}\" to=\"${5:/}\" label=\"${6:Link with method}\" method={${7::put}} />",
+				"  <.dropdown_menu_item phx-click=\"${8:some_phoenix_click_event}\" label=\"${0:Phoenix click event}\" />",
+				"</.dropdown>"
+		],
+		"description": "Dropdown with various menu item options"
+	},
+	"Dropdown custom trigger": {
+		"prefix": "dropdown custom trigger",
+		"body": [
+				"<.dropdown>",
+				"  <:trigger_element>",
+				"    <.avatar src=\"${1:}\" />",
+				"  </:trigger_element>",
+				"",
+				"  <.dropdown_menu_item label=\"${2:Item 1}\" />",
+				"  <.dropdown_menu_item label=\"${0:Item 2}\" />",
+				"</.dropdown>"
+		],
+		"description": "Dropdown with custom trigger element"
+	},
+	"Dropdown Live View": {
+		"prefix": "dropdown live view",
+		"body": [
+				"<.dropdown label=\"${1:Dropdown}\" js_lib=\"live_view_js\">",
+				"  <.dropdown_menu_item type=\"button\">",
+				"    <Heroicons.Outline.home class=\"w-5 h-5 text-gray-500 dark:text-gray-300\" />",
+				"    Button item with icon",
+				"  </.dropdown_menu_item>",
+				"  <.dropdown_menu_item type=\"a\" href=\"/\" label=\"a item\" />",
+				"  <.dropdown_menu_item type=\"live_patch\" href=\"/\" label=\"Live Patch item\" />",
+				"  <.dropdown_menu_item type=\"live_redirect\" href=\"/\" label=\"Live Redirect item\" />",
+				"</.dropdown>"
+		],
+		"description": "Dropdown that works with Live View"
+	},
+	"Spinner": {
+		"prefix": "spinner",
+		"body": [
+				"<.spinner show={${1:true}} size=\"${2:sm}\" class=\"${0:text-gray-500}\" />"
+		],
+		"description": "Creates a spinner"
+	},
+	"Breadcrumbs slash": {
+		"prefix": "breadcrumbs slash",
+		"body": [
+				"<.breadcrumbs links={[",
+				"  %{ label: \"${1:Link 1}\", to: \"${2:#}\" },",
+				"  %{ label: \"${3:Link 2}\", to: \"${4:#}\", link_type: \"${5:a|live_patch|live_redirect}\" },",
+				"  %{ label: \"${6:Link 3}\", to: \"${7:#}\", link_type: \"${0:a|live_patch|live_redirect}\" }",
+				"]}/>"
+		],
+		"description": "Creates breadcrumbs with slash"
+	},
+	"Breadcrumbs chevron": {
+		"prefix": "breadcrumbs chevron",
+		"body": [
+				"<.breadcrumbs separator=\"${1:chevron}\" links={[",
+				"  %{ label: \"${2:Link 1}\", to: \"${3:#}\" },",
+				"  %{ label: \"${4:Link 2}\", to: \"${5:#}\", link_type: \"${6:a|live_patch|live_redirect}\" },",
+				"  %{ label: \"${7:Link 3}\", to: \"${8:#}\", link_type: \"${0:a|live_patch|live_redirect}\" }",
+				"]}/>"
+		],
+		"description": "Creates breadcrumbs with chevron"
+	},
+	"Breadcrumbs custom css": {
+		"prefix": "breadcrumbs custom css",
+		"body": [
+				"<.breadcrumbs class=\"${1:mt-3}\" link_class=\"${2:!text-blue-500 text-sm font-semibold}\" links={[",
+				"  %{ label: \"${3:Link 1}\", to: \"${4:#}\" },",
+				"  %{ label: \"${5:Link 2}\", to: \"${6:#}\", link_type: \"${7:a|live_patch|live_redirect}\" },",
+				"  %{ label: \"${8:Link 3}\", to: \"${9:#}\", link_type: \"${0:a|live_patch|live_redirect}\" },",
+				"]}/>"
+		],
+		"description": "Creates breadcrumbs with custom css"
+	},
+	"Avatar": {
+		"prefix": "avatar",
+		"body": [
+				"<.avatar size=\"${1:xs|sm|md|lg|xl}\" src=\"${0:}\" />",
+				""
+		],
+		"description": "Avatar with image"
+	},
+	"Avatar placeholder": {
+		"prefix": "avatar placeholder",
+		"body": [
+				"<.avatar size=\"${1:xs|sm|md|lg|xl}\"/>"
+		],
+		"description": "Avatar with placeholder"
+	},
+	"Avatar group": {
+		"prefix": "avatar group",
+		"body": [
+				"<.avatar_group avatars={[",
+				"  \"${1:}\",",
+				"  \"${2:}\",",
+				"  \"${3:}\",",
+				"  \"${4:}\",",
+				"]} size=\"${0:xs|sm|md|lg|xl}\" />"
+		],
+		"description": "avatar group with imgages"
+	},
+	"Avatar placeholder initials": {
+		"prefix": "avatar initials",
+		"body": [
+				"<.avatar name=\"${1:Petal Components}\" size=\"${0:xs|sm|md|lg|xl}\" />",
+				""
+		],
+		"description": "avatar with placeholder initials"
+	},
+	"Avatar random color initials": {
+		"prefix": "avatar random color initials",
+		"body": [
+				"<.avatar name=\"${1:Matt Platts}\" size=\"${0:xs|sm|md|lg|xl}\" random_color />",
+				""
+		],
+		"description": "Avatar with random color placeholder initials"
+	},
+	"Progress bar": {
+		"prefix": "progress bar",
+		"body": [
+				"<.progress color=\"${1:primary|secondary|info|success|warning|danger|gray}\" value={${2:10}} max={${3:100}} size=\"${4:xs|sm|md|lg|xl}\" label=\"${5:15%}\" class=\"${0:max-w-xl}\" />",
+				""
+		],
+		"description": "Creates a progress bar"
+	},
+	"Pagination": {
+		"prefix": "pagination",
+		"body": [
+				"<.pagination link_type=\"a\" class=\"mb-5\" path=\"/:page\" current_page={1} total_pages={10} />",
+				""
+		],
+		"description": "Creates pagination"
+	},
+	"Pagination Live View": {
+		"prefix": "pagination live view",
+		"body": [
+				"defmodule PaginationLiveView do",
+				"  use YourAppWeb, :live_view",
+				"",
+				"  def mount(_params, session, socket) do",
+				"    {:ok, assign(socket, pagination_page: 1)}",
+				"  end",
+				"",
+				"  def handle_params(params, _uri, socket) do",
+				"    {:noreply, assign(socket, pagination_page: String.to_integer(params[\"page\"]))}",
+				"  end",
+				"",
+				"  def render(assigns) do",
+				"    ~H\"\"\"",
+				"    <.pagination",
+				"      link_type=\"${1:live_patch}\"",
+				"      path=\"${2:/:page}\"",
+				"      current_page={@pagination_page} total_pages={${0:10}}",
+				"    />",
+				"    \"\"\"",
+				"  end",
+				"end",
+				"",
+				"# In your routes.ex file:",
+				"scope \"/\", YourAppWeb do",
+				"  pipe_through :browser",
+				"",
+				"  live \"/:page\", PaginationLiveView",
+				"end"
+		],
+		"description": "Pagination that works with Live View"
+	},
+	"Tabs": {
+		"prefix": "tabs",
+		"body": [
+				"<.tabs class=\"flex-col sm:flex-row\">",
+				"  <.tab is_active to=\"${1:/}\">${2:Home}</.tab>",
+				"  <.tab link_type=\"${3:a|live_patch|live_redirect}\" to=\"${4:/}\" label=\"${0:About}\" />",
+				"</.tabs>"
+		],
+		"description": "Creates tabs"
+	},
+	"Tabs number": {
+		"prefix": "tabs number",
+		"body": [
+				"<.tabs>",
+				"  <.tab number={${1:1}} is_active to=\"${2:/}\">${3:Home}</.tab>",
+				"  <.tab number={${4:63}} link_type=\"${5:a|live_patch|live_redirect}\" to=\"${6:/}\" label=\"${0:About}\" />",
+				"</.tabs>"
+		],
+		"description": "Creates tabs with a number"
+	},
+	"Tabs underlined icons": {
+		"prefix": "tabs underline icon",
+		"body": [
+				"<.tabs underline>",
+				"  <.tab underline is_active to=\"${1:/}\">",
+				"    <Heroicons.Outline.home class=\"w-5 h-5 mr-2\" />",
+				"      ${2:Home}",
+				"  </.tab>",
+				"  <.tab underline link_type=\"${3:a|live_patch|live_redirect}\" to=\"${4:/}\">",
+				"    <Heroicons.Outline.office_building class=\"w-5 h-5 mr-2\" />",
+				"      ${0:Company}",
+				"  </.tab>",
+				"</.tabs>"
+		],
+		"description": "Creates underlined tabs with icons"
+	},
+	"Card": {
+		"prefix": "card",
+		"body": [
+				"<.card variant=\"${1:basic|outline}\">",
+				"  <.card_content category=\"${2:Article}\" heading=\"${3:Enhance your Phoenix development}\">",
+				"    ${4:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget leo interdum, feugiat ligula eu, facilisis massa. Nunc sollicitudin massa a elit laoreet.}",
+				"  </.card_content>",
+				"</.card>"
+		],
+		"description": "Creates a card"
+	},
+	"Card media": {
+		"prefix": "card media",
+		"body": [
+				"<.card>",
+				"  <.card_media src=\"${1:}\" />",
+				"  <.card_content category=\"${2:Article}\" heading=\"${3:Enhance your Phoenix development}\">",
+				"    ${4:Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget leo interdum, feugiat ligula eu, facilisis massa. Nunc sollicitudin massa a elit laoreet.}",
+				"  </.card_content>",
+				"</.card>"
+		],
+		"description": "Creates a card with media"
+	},
+	"Card footer": {
+		"prefix": "card footer",
+		"body": [
+				"<.card>",
+				"  <.card_media src=\"https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80\" />",
+				"",
+				"  <.card_content category=\"Marketing\" heading=\"Tips for lightning fast development\">",
+				"    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget leo interdum, feugiat ligula eu, facilisis massa. Nunc sollicitudin massa a elit laoreet.",
+				"  </.card_content>",
+				"",
+				"  <.card_footer>",
+				"    <.button to=\"/\" label=\"View\">",
+				"      <Heroicons.Solid.eye class=\"w-4 h-4 mr-2\" />View",
+				"    </.button>",
+				"  </.card_footer>",
+				"</.card>"
+		],
+		"description": "Creates a card with footer"
+	},
+	"Table": {
+		"prefix": "table",
+		"body": [
+				"<.table>",
+				"  <thead>",
+				"    <.tr>",
+				"      <.th>${1:Name}</.th>",
+				"      <.th>${2:Title}</.th>",
+				"      <.th>${3:Email}</.th>",
+				"    </.tr>",
+				"  </thead>",
+				"  <tbody>",
+				"    <.tr>",
+				"      <.td>",
+				"        ${4:John Smith}",
+				"      </.td>",
+				"      <.td>${5:Engineer}</.td>",
+				"      <.td>${0:john.smith@example.com}</.td>",
+				"    </.tr>",
+				"  </tbody>",
+				"</.table>"
+		],
+		"description": "Creates a table"
+	},
+	"Table multi-lined avatar": {
+		"prefix": "table multi-lined avatar",
+		"body": [
+				"<.table>",
+				"  <.tr>",
+				"    <.th>${1:Name}</.th>",
+				"    <.th>${2:Title}</.th>",
+				"    <.th>${3:Phone}</.th>",
+				"    <.th>${4:Status}</.th>",
+				"    <.th>${5:}</.th>",
+				"  </.tr>",
+				"",
+				"  <.tr>",
+				"    <.td>",
+				"      <.user_inner_td",
+				"        avatar_assigns={%{src: \"${6:}\"}}",
+				"        label=\"${7:John Smith}\"",
+				"        sub_label=\"${8:john.smith@example.com}\"",
+				"      />",
+				"    </.td>",
+				"    <.td>${9:Engineer}</.td>",
+				"    <.td class=\"whitespace-nowrap\">${10:+1 0432 677 943}</.td>",
+				"    <.td>",
+				"      <.badge color=\"${11:success}\" label=\"${12:Active}\" />",
+				"    </.td>",
+				"    <.td>",
+				"      <.link to=\"${13:/}\" label=\"${0:Edit}\" class=\"text-primary-600 dark:text-primary-400\" />",
+				"    </.td>",
+				"  </.tr>",
+				"</.table>"
+		],
+		"description": "Creates a multi-lined table with avatar"
+	},
+	"Modal Live View": {
+		"prefix": "modal live view",
+		"body": [
+				"defmodule Modal LiveView do",
+				"  use YourAppWeb, :live_view",
+				"",
+				"  def mount(_params, session, socket) do",
+				"    {:ok, assign(socket, modal: false)}",
+				"  end",
+				"",
+				"  def handle_params(params, _uri, socket) do",
+				"    case socket.assigns.live_action do",
+				"      :index ->",
+				"        {:noreply, assign(socket, modal: false)}",
+				"      :modal ->",
+				"        {:noreply, assign(socket, modal: params[\"size\"])}",
+				"    end",
+				"  end",
+				"",
+				"  def render(assigns) do",
+				"    ~H\"\"\"",
+				"    <.button label=\"${1:Open modal}\" link_type=\"live_patch\" to={Routes.page_path(@socket, :modal, \"${2:sm|md|lg|xl|2xl|full}\")} />",
+				"",
+				"    <%= if @modal do %>",
+				"      <.modal max_width={@modal} title=\"${3:Modal}\">",
+				"        <div class=\"gap-5 text-sm\">",
+				"          <.form_label label=\"${4:Add some text here.}\" />",
+				"          <div class=\"flex justify-end\">",
+				"            <.button label=\"${0:close}\" phx-click={PetalComponents.Modal.hide_modal()} />",
+				"          </div>",
+				"        </div>",
+				"      </.modal>",
+				"    <% end %>",
+				"    \"\"\"",
+				"  end",
+				"end",
+				"",
+				"# In your routes.ex file:",
+				"scope \"/\", YourAppWeb do",
+				"  pipe_through :browser",
+				"",
+				"  live \"/:size\", ModalLive",
+				"end"
+		],
+		"description": "Creates a modal that works with Live View"
+	},
+	"Slide Over": {
+		"prefix": "slide over",
+		"body": [
+				"defmodule SlideOver LiveView do",
+				"  use YourAppWeb, :live_view",
+				"",
+				"  def mount(_params, session, socket) do",
+				"    {:ok, assign(socket, slide_over: false)}",
+				"  end",
+				"",
+				"  def handle_params(params, _uri, socket) do",
+				"    case socket.assigns.live_action do",
+				"      :index ->",
+				"        {:noreply, assign(socket, slide_over: false)}",
+				"      :slide_over ->",
+				"        {:noreply, assign(socket, slide_over: params[\"origin\"])}",
+				"    end",
+				"  end",
+				"",
+				"  def render(assigns) do",
+				"    ~H\"\"\"",
+				"    <.button label=\"${1:Open Slide Over}\" link_type=\"live_patch\" to={Routes.page_path(@socket, :slide_over, \"${2:start|top|end|bottom}\")} />",
+				"",
+				"    <%= if @slide_over do %>",
+				"      <.slide_over slide_over={@slide_over} max_width=\"sm\" title=\"${3:SlideOver}\">",
+				"        <div class=\"gap-5 text-sm\">",
+				"          <.form_label label=\"${0:Add some text here.}\" />",
+				"          <div class=\"flex justify-end\">",
+				"            <.button label=\"close\" phx-click={PetalComponents.SlideOver.hide_slide_over(@slide_over)} />",
+				"          </div>",
+				"        </div>",
+				"      </.slide_over>",
+				"    <% end %>",
+				"    \"\"\"",
+				"  end",
+				"end",
+				"",
+				"# In your routes.ex file:",
+				"scope \"/\", YourAppWeb do",
+				"  pipe_through :browser",
+				"",
+				"  live \"/:origin\", SlideOverLive",
+				"end"
+		],
+		"description": "Creates a Slide Over"
+	}
 }
