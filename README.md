@@ -4,7 +4,7 @@
   <h1 align="center">Petal Components VSCode Snippets</h1>
 
   <p align="center">
-    A set of snippets for the [Petal Components HEEX library](https://github.com/petalframework/petal_components).
+    A set of snippets for the <a href="https://github.com/petalframework/petal_components">Petal Components HEEX library</a>.
   </p>
 </p>
 
@@ -96,4 +96,4 @@ In VScode: `cmd-shift-p` -> Preferences: Configure User Snippets -> "phoenix-hee
 
 You can use [this extension](https://marketplace.visualstudio.com/items?itemName=nsfilho.tosnippet) to help convert large blocks of code to snippets.
 
-Once you're happy with a snippet, clone this repo, add the snippet to `/snippets/snippets.code-snippets" and do a PR.
+Once you're happy with a snippet, clone this repo, add the snippet to `/snippets/heex.code-snippets" and do a PR.
