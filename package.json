@@ -13,12 +13,8 @@
     "contributes": {
         "snippets": [
             {
-                "language": "html-eex",
-                "path": "./snippets/snippets.code-snippets"
-            },
-            {
                 "language": "phoenix-heex",
-                "path": "./snippets/snippets.code-snippets"
+                "path": "./snippets/heex.code-snippets"
             }
         ]
     }
