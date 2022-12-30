@@ -133,6 +133,13 @@
 		],
 		"description": "Creates a paragraph tag"
 	},
+	"prose": {
+		"prefix": "prose",
+		"body": [
+			"<.prose>$0</.prose>"
+		],
+		"description": "Creates a paragraph tag"
+	},
 	"h1 fancy": {
 		"prefix": "h1 fancy",
 		"body": [
