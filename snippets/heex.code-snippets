@@ -231,6 +231,36 @@
 		],
 		"description": "Creates a dismissable alert with icon"
 	},
+	"Full form": {
+		"prefix": "form_full",
+		"body": [
+			"<.form :let={f} as={:user} for={@changeset}>",
+			"  <.form_field",
+			"    type=\"text_input\"",
+			"    form={f}",
+			"    field={:your_field}",
+			"    placeholder=\"Placeholder\"",
+			"  />",
+			"  <.form_field",
+			"    type=\"select\"",
+			"    options={[Admin: \"admin\", User: \"user\"]}",
+			"    form={f}",
+			"    field={:select}",
+			"  />",
+			"  <.form_field type=\"password_input\" form={f} field={:password} />",
+			"  <.form_field",
+			"    type=\"radio_group\"",
+			"    options={[Male: \"male\", Female: \"female\", Other: \"other\"]}",
+			"    form={f}",
+			"    field={:gender}",
+			"  />",
+			"  <div class=\"flex justify-end gap-3\">",
+			"    <.button type=\"button\" label=\"Cancel\" color=\"white\" />",
+			"    <.button type=\"submit\" label=\"Submit\" />",
+			"  </div>",
+			"</.form>"
+		]
+	},
 	"Form field": {
 		"prefix": "form_field",
 		"body": [
