@@ -3,7 +3,7 @@
     "displayName": "Petal Components (HEEX) snippets",
     "description": "Code snippets for the Petal Components (HEEX) library",
     "publisher": "petalframework",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.66.0"
     },
