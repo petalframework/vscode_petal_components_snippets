@@ -26,6 +26,7 @@
 |`h4`| Creates an h4 heading.|
 |`h5`| Creates an h5 heading.|
 |`p tag`| Creates a paragraph tag.|
+|`prose`| Creates a div with Tailwind's `prose` classes.|
 |`h1 modified`| Creates a modified h1 heading.|
 |`h1 fancy`| Creates a fancy h1 heading.|
 |`heroicons solid`| Creates a solid Heroicon.|
@@ -36,6 +37,7 @@
 |`alert`| Creates an alert.|
 |`alert dismissable`| Creates a dismissable alert with icon.|
 |`text_input`| Form field - type text input.|
+|`form_full`| Creates an entire form for you to start with.|
 |`email_input`| Form field - type email input.|
 |`number_input`| Form field - type number input.|
 |`password_input`| Form field - type password input.|
